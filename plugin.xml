@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+  <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="smartdb_watcher.contribution1"
+            objectClass="org.eclipse.core.resources.IProject">
+          <menu
+             id="org.eclipse.ui.articles.action.contribution.navigator.subMenu"
+             label="smartdb_watcher"
+             path="additions">
+          <separator name="group1"/>
+          </menu>
+          <action
+             id="org.eclipse.ui.articles.action.contribution.navigator.action2" 
+             label="配置"
+             icon="icons/red_dot.gif"
+          menubarPath="org.eclipse.ui.articles.action.contribution.navigator.subMenu/group1" 
+             class="jp.co.dreamarts.plugin.mediadeployer.actions.MediaDeployer"
+          enablesFor="1">
+          </action> 
+           <action
+             id="test.actions.SampleAction" 
+             label="启动"
+             icon="icons/red_dot.gif"
+          menubarPath="org.eclipse.ui.articles.action.contribution.navigator.subMenu/group1" 
+             class="jp.co.dreamarts.plugin.mediadeployer.actions.ServiceStarter"
+          enablesFor="1">
+          </action> 
+          <action
+             id="org.eclipse.ui.articles.action.contribution.navigator.action2" 
+             label="停止"
+             icon="icons/red_dot.gif"
+          menubarPath="org.eclipse.ui.articles.action.contribution.navigator.subMenu/group1" 
+             class="jp.co.dreamarts.plugin.mediadeployer.actions.ServiceStoper"
+          enablesFor="1">
+          </action> 
+         <visibility>
+            <objectState
+                  name="projectNature"
+                  value="org.eclipse.jdt.core.javanature">
+            </objectState>
+         </visibility>
+      </objectContribution>
+   </extension>
+</plugin>
