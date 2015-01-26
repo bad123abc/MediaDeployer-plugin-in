@@ -1,11 +1,13 @@
 package jp.co.dreamarts.plugin.mediadeployer.actions;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 import org.eclipse.core.runtime.Platform;
@@ -13,8 +15,17 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
 
 public class MediaDeployer implements IObjectActionDelegate {
+    static Process startProcess;
+    
+    public static Process getStartProcess() {
+        return startProcess;
+    }
     @Override
     public void run(IAction actionConfiguration) {
         // Gets absolute path of the current workspace
@@ -80,30 +91,10 @@ public class MediaDeployer implements IObjectActionDelegate {
             if (pluginFlag.exists()) {
                 copyFile(oldPath + "package.json", newPath + "package.json");
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
+                new WindowsRunTime(filePath).start();
             } else {
-                // for windows operating system
-                String location = filePath.substring(0, filePath.indexOf(":") + 1);
-                String command = "cmd /c  " + location + " && cd " + filePath
-                        + " && npm install grunt-sdbwatcher";
-                System.out.println(command);
-                try {
-                    Process process = Runtime.getRuntime().exec(command);
-                    process.waitFor();
-                    copyFile(oldPath + "package.json", newPath + "package.json");
-                    copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
-                } catch (IOException | InterruptedException e) {
-                    System.out.println("sdbwatcher Installation failed");
-                    e.printStackTrace();
-                }
-                // execute "npm install" in cmd
-                try {
-                    String command2 = "cmd /c " + location + " &&cd " + filePath + " && npm install ";
-                    Process process = Runtime.getRuntime().exec(command2);
-                    process.waitFor();
-                } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+                new WinSdbwatcherInstaller(filePath, oldPath, newPath).start();
+                new WindowsRunTime(filePath).start();
             }
             System.out.println("Successful configuration");
         }
@@ -168,27 +159,55 @@ public class MediaDeployer implements IObjectActionDelegate {
             if (pluginFlag.exists()) {
                 copyFile(oldPath + "package.json", newPath + "package.json");
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
+                new MacRunTime(filePath).start();
             } else {
-                try {
-                    Process process = Runtime.getRuntime().exec(filePath + "sdbwatcherConfig.sh");
-                    process.waitFor();
-                    copyFile(oldPath + "package.json", newPath + "package.json");
-                    copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
-                } catch (IOException | InterruptedException e) {
-                    System.out.println("sdbwatcher Installation failed ");
-                    e.printStackTrace();
-                }
-                // execute "npm install"in shell
-                try {
-
-                    Process process = Runtime.getRuntime().exec(filePath + "npminstall.sh");
-                    process.waitFor();
-                } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+                new MacSdbwatcherInstaller(filePath, oldPath, newPath).start();
+                new MacRunTime(filePath).start();
             }
             System.out.println("Successful configuration");
+        }
+    }
+
+    private void macInstall(String filePath, String oldPath, String newPath) {
+        try {
+            Process process = Runtime.getRuntime().exec(filePath + "sdbwatcherConfig.sh");
+            process.waitFor();
+            copyFile(oldPath + "package.json", newPath + "package.json");
+            copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
+        } catch (IOException | InterruptedException e) {
+            System.out.println("sdbwatcher Installation failed ");
+            e.printStackTrace();
+        }
+        // execute "npm install"in shell
+        try {
+
+            Process process = Runtime.getRuntime().exec(filePath + "npminstall.sh");
+            process.waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void winInstall(String filePath, String oldPath, String newPath) {
+        // for windows operating system
+        String location = filePath.substring(0, filePath.indexOf(":") + 1);
+        String command = "cmd /c  " + location + " && cd " + filePath + " && npm install grunt-sdbwatcher";
+        try {
+            Process process = Runtime.getRuntime().exec(command);
+            process.waitFor();
+            copyFile(oldPath + "package.json", newPath + "package.json");
+            copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
+        } catch (IOException | InterruptedException e) {
+            System.out.println("sdbwatcher Installation failed");
+            e.printStackTrace();
+        }
+        // execute "npm install" in cmd
+        try {
+            String command2 = "cmd /c " + location + " &&cd " + filePath + " && npm install ";
+            Process process = Runtime.getRuntime().exec(command2);
+            process.waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
@@ -286,7 +305,7 @@ public class MediaDeployer implements IObjectActionDelegate {
         fos = new FileOutputStream(fileBat);
 
         // location is partition of the workspace
-        String location = filePath.substring(0, filePath.indexOf(":") + 2);
+        String location = filePath.substring(0, filePath.indexOf(":") + 1);
         sb.append(location + "\r\n" + "cd " + filePath + "\r\n" + "grunt");
         sb.append("\r\n");
         fos.write(sb.toString().getBytes("utf-8"));
@@ -323,7 +342,19 @@ public class MediaDeployer implements IObjectActionDelegate {
         }
 
     }
+    public void getConsole(String s) {
+        // create MessageConsole
+        MessageConsole console = new MessageConsole("HIBIKI", null);
+        // get ConsoleManager by ConsolePlugin，then add console
+        ConsolePlugin.getDefault().getConsoleManager().addConsoles(new IConsole[] { console });
 
+        //  create MessageConsoleStream
+        MessageConsoleStream consoleStream = console.newMessageStream();
+
+        ConsolePlugin.getDefault().getConsoleManager().showConsoleView(console);
+        //  use MessageConsoleStream to print
+        consoleStream.println(s);
+    }
     @Override
     public void selectionChanged(IAction arg0, ISelection arg1) {
 
@@ -334,4 +365,116 @@ public class MediaDeployer implements IObjectActionDelegate {
 
     }
 
+    //create new thread to install grunt-sdbwatcher in mac os
+    class MacSdbwatcherInstaller extends Thread {
+        String filePath, oldPath, newPath;
+
+        public MacSdbwatcherInstaller(String filePath, String oldPath, String newPath) {
+            super();
+            this.filePath = filePath;
+            this.oldPath = oldPath;
+            this.newPath = newPath;
+        }
+
+        @Override
+        public void run() {
+            macInstall(filePath, oldPath, newPath);
+        }
+
+    }
+
+    //create new thread to install grunt-sdbwatcher in windows os
+    class WinSdbwatcherInstaller extends Thread {
+        String filePath, oldPath, newPath;
+
+        public WinSdbwatcherInstaller(String filePath, String oldPath, String newPath) {
+            super();
+            this.filePath = filePath;
+            this.oldPath = oldPath;
+            this.newPath = newPath;
+        }
+
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            winInstall(filePath, oldPath, newPath);
+        }
+
+    }
+
+    // in windows os ,start grunt
+    class WindowsRunTime extends Thread {
+        String filePath;
+
+        public WindowsRunTime(String filePath) {
+            this.filePath = filePath;
+        }
+
+        @Override
+        public void run() {
+
+            StringBuffer sbError = new StringBuffer();
+            StringBuffer sbOut = new StringBuffer();
+
+            
+            try {
+                startProcess = Runtime.getRuntime().exec("cmd /c start /b /w " + filePath + "start.bat");
+               System.out.println("service start");
+                BufferedReader in = new BufferedReader(new InputStreamReader(startProcess.getInputStream()));
+                String s = "";
+                while ((s = in.readLine()) != null) {
+                    getConsole(s);
+                }
+                
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+
+     
+
+    }
+
+    // in Mac os ,start grunt
+    class MacRunTime extends Thread {
+        String filePath;
+
+        public MacRunTime(String filePath) {
+            this.filePath = filePath;
+        }
+
+        @Override
+        public void run() {
+
+            StringBuffer sbError = new StringBuffer();
+            StringBuffer sbOut = new StringBuffer();
+
+            try {
+                startProcess = Runtime.getRuntime().exec(File.separator.toString() + filePath + "start.sh");
+                System.out.println("service start");
+                BufferedReader in = new BufferedReader(new InputStreamReader(startProcess.getInputStream()));
+                String s = "";
+                while ((s = in.readLine()) != null) {
+                    // create MessageConsole
+                    MessageConsole console = new MessageConsole("HIBIKI", null);
+                    // get ConsoleManager by ConsolePlugin，then add console
+                    ConsolePlugin.getDefault().getConsoleManager().addConsoles(new IConsole[] { console });
+
+                    //  create MessageConsoleStream
+                    MessageConsoleStream consoleStream = console.newMessageStream();
+
+                    ConsolePlugin.getDefault().getConsoleManager().showConsoleView(console);
+                    // 使用MessageConsoleStream来打印你想要显示的信息到Console视图，这样一切就OK了，简单吧：）
+                    consoleStream.println(s);
+                }
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+
+    }
 }
