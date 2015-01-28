@@ -65,7 +65,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                             )
                         );
                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer configure has been completed");
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer directly start...");
+                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+sdf.format(new Date())+"Media Deployer directly start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -187,7 +187,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         );
 
                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer configure has been completed");
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer directly start...");
+                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+sdf.format(new Date())+"Media Deployer directly start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
