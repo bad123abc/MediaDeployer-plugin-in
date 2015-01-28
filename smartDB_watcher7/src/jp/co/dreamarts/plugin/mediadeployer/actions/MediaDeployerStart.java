@@ -21,7 +21,8 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
-   SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     // in Mac os ,start grunt
     class MacRunTime extends Thread {
         String filePath;
@@ -36,8 +37,10 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(
                             File.separator.toString() + filePath + "start.sh");
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configure has been completed");
-                    ConsolePanel.getConsole(sdf.format(new Date())+sdf.format(new Date())+"Media Deployer directly start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configure has been completed");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" 
+                            + "Media Deployer directly start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -50,18 +53,19 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
         }
     }
@@ -84,8 +88,9 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(
                             File.separator.toString() + filePath + "start.sh");
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configuration is complete");
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configuration is complete");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + "Media Deployer start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -98,18 +103,19 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
 
         }
@@ -123,26 +129,23 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
             this.filePath = filePath;
         }
 
-        
         @Override
         public void run() {
             try {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                    Runtime.getRuntime().addShutdownHook( 
-                            new Thread(
-                                new Runnable() {
-                                    public void run() {
-                                        System.out.println("close");
-                                        MediaDeployerClose closer = new MediaDeployerClose();
-                                        closer.shutdownListener();
-                                    }   
-                                }
-                            )
-                        );
+                    Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                        public void run() {
+                            System.out.println("close");
+                            MediaDeployerClose closer = new MediaDeployerClose();
+                            closer.shutdownListener();
+                        }
+                    }));
 
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configure has been completed");
-                    ConsolePanel.getConsole(sdf.format(new Date())+sdf.format(new Date())+"Media Deployer directly start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configure has been completed");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" 
+                            + "Media Deployer directly start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -155,18 +158,19 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
         }
     }
@@ -187,8 +191,9 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
             try {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configuration is complete");
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configuration is complete");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + "Media Deployer start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -201,19 +206,20 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
 
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
 
         }
@@ -256,8 +262,8 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                 fos.close();
             }
         } catch (Exception e) {
-            ConsolePanel.getConsole(sdf.format(new Date())+"Copy single file operation error");
-            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + "Copy single file operation error");
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
     }
 
@@ -345,15 +351,16 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
             copyFile(oldPath + "package.json", newPath + "package.json");
             copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
         } catch (IOException | InterruptedException e) {
-            ConsolePanel.getConsole(sdf.format(new Date())+"grunt-sdbwatcher Installation failed ");
-            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                    + "grunt-sdbwatcher Installation failed ");
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
         // execute "npm install"in shell
         try {
             Process process = Runtime.getRuntime().exec(filePath + "npminstall.sh");
             process.waitFor();
         } catch (IOException | InterruptedException e) {
-            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
     }
 
@@ -403,7 +410,7 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                     creatJsonBatFile(filePath, workspaceName, file, fileBat);
                 }
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
             /*
              * Detecting grunt-sdbwatcher whether or not installed ,if not
@@ -422,7 +429,8 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
                 new WindowsRunTime(filePath).start();
             } else {
-                ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer is configuring,please wait...");
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                        + "Media Deployer is configuring,please wait...");
                 new WinSdbwatcherInstaller(filePath, oldPath, newPath).start();
             }
         }
@@ -469,7 +477,7 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                     creatJsonShFile(filePath, workspaceName, file, fileSh, sdbwatcherConfig, npminstall);
                 }
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
             /*
              * Detecting grunt-sdbwatcher whether or not installed ,if not
@@ -489,7 +497,8 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
                 new MacRunTime(filePath).start();
             } else {
-                ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer is comfiguring ,please wait...");
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                        + "Media Deployer is comfiguring ,please wait...");
                 new MacSdbwatcherInstaller(filePath, oldPath, newPath).start();
             }
         }
@@ -505,8 +514,9 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
             copyFile(oldPath + "package.json", newPath + "package.json");
             copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
         } catch (IOException | InterruptedException e) {
-            ConsolePanel.getConsole(sdf.format(new Date())+"grunt-sdbwatcher Installation failed");
-            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                    + "grunt-sdbwatcher Installation failed");
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
         // execute "npm install" in cmd
         try {
@@ -514,25 +524,22 @@ public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
             Process process = Runtime.getRuntime().exec(command2);
             process.waitFor();
         } catch (IOException | InterruptedException e) {
-            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
     }
 
     @Override
     public void dispose() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void init(IWorkbenchWindow arg0) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void selectionChanged(IAction arg0, ISelection arg1) {
-        // TODO Auto-generated method stub
 
     }
 }

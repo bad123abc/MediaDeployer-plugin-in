@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="smartDB_watcher7" modificationStamp="17" version="1.2">
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryAbstractCellEditor.class[CategoryAbstractCellEditor" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryPath.class[CategoryPath" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryNodeRenderer.class[CategoryNodeRenderer" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryNodeEditor.class[CategoryNodeEditor" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryNode.class[CategoryNode" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryElement.class[CategoryElement" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryExplorerTree.class[CategoryExplorerTree" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryExplorerLogRecordFilter.class[CategoryExplorerLogRecordFilter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryNodeEditorRenderer.class[CategoryNodeEditorRenderer" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryExplorerModel.class[CategoryExplorerModel" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer(CategoryImmediateEditor.class[CategoryImmediateEditor" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.reflect"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math(FloatRange.class[FloatRange" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math(LongRange.class[LongRange" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math(NumberRange.class[NumberRange" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math(Range.class[Range" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math(DoubleRange.class[DoubleRange" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math(IntRange.class[IntRange" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.win32"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.win32(StdCallLibrary.class[StdCallLibrary" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.win32(StdCall.class[StdCall" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(NativeLong.class[NativeLong" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(TypeMapper.class[TypeMapper" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(CallbackProxy.class[CallbackProxy" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Function.class[Function" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(StructureWriteContext.class[StructureWriteContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(FunctionMapper.class[FunctionMapper" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(StructureReadContext.class[StructureReadContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(FromNativeConverter.class[FromNativeConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(FromNativeContext.class[FromNativeContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Callback.class[Callback" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(IntegerType.class[IntegerType" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(CallbackResultContext.class[CallbackResultContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(InvocationMapper.class[InvocationMapper" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(MethodParameterContext.class[MethodParameterContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(ToNativeConverter.class[ToNativeConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(WString.class[WString" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(FunctionParameterContext.class[FunctionParameterContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Structure.class[Structure" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Library.class[Library" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Union.class[Union" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Native.class[Native" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(CallbackParameterContext.class[CallbackParameterContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(NativeMappedConverter.class[NativeMappedConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(NativeMapped.class[NativeMapped" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(PointerType.class[PointerType" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Pointer.class[Pointer" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(Memory.class[Memory" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(DefaultTypeMapper.class[DefaultTypeMapper" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(StringArray.class[StringArray" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(MethodResultContext.class[MethodResultContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(TypeConverter.class[TypeConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(FunctionResultContext.class[FunctionResultContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(ToNativeContext.class[ToNativeContext" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna(NativeLibrary.class[NativeLibrary" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang(CharSetUtils.class[CharSetUtils" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang(CharRange.class[CharRange" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang(CharSet.class[CharSet" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or.sax"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableFloat.class[MutableFloat" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableByte.class[MutableByte" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableObject.class[MutableObject" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableBoolean.class[MutableBoolean" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableDouble.class[MutableDouble" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableShort.class[MutableShort" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(Mutable.class[Mutable" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableLong.class[MutableLong" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable(MutableInt.class[MutableInt" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.config"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.config(PropertyPrinter.class[PropertyPrinter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.config(PropertyGetter.class[PropertyGetter" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(CountingQuietWriter.class[CountingQuietWriter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(DateTimeDateFormat.class[DateTimeDateFormat" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(PatternConverter.class[PatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(SyslogQuietWriter.class[SyslogQuietWriter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(ISO8601DateFormat.class[ISO8601DateFormat" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(PatternParser.class[PatternParser" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(AbsoluteTimeDateFormat.class[AbsoluteTimeDateFormat" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(FormattingInfo.class[FormattingInfo" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers(QuietWriter.class[QuietWriter" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.configure"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5(LogRecord.class[LogRecord" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5(PassingLogRecordFilter.class[PassingLogRecordFilter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5(LogRecordFilter.class[LogRecordFilter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5(LF5Appender.class[LF5Appender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5(Log4JLogRecord.class[Log4JLogRecord" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5(AppenderFinalizer.class[AppenderFinalizer" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5(LogLevel.class[LogLevel" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception(NestableError.class[NestableError" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception(NestableDelegate.class[NestableDelegate" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception(Nestable.class[Nestable" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception(CloneFailedException.class[CloneFailedException" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception(NestableException.class[NestableException" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception(NestableRuntimeException.class[NestableRuntimeException" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(RelativeTimePatternConverter.class[RelativeTimePatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(NamePatternConverter.class[NamePatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(ThrowableInformationPatternConverter.class[ThrowableInformationPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(LiteralPatternConverter.class[LiteralPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(NDCPatternConverter.class[NDCPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(FullLocationPatternConverter.class[FullLocationPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(SequenceNumberPatternConverter.class[SequenceNumberPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(DatePatternConverter.class[DatePatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(IntegerPatternConverter.class[IntegerPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(MessagePatternConverter.class[MessagePatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(LineSeparatorPatternConverter.class[LineSeparatorPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(MethodLocationPatternConverter.class[MethodLocationPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(PropertiesPatternConverter.class[PropertiesPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(FileLocationPatternConverter.class[FileLocationPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(LineLocationPatternConverter.class[LineLocationPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(LoggingEventPatternConverter.class[LoggingEventPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(ClassNamePatternConverter.class[ClassNamePatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(LoggerPatternConverter.class[LoggerPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(PatternConverter.class[PatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(LevelPatternConverter.class[LevelPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(FileDatePatternConverter.class[FileDatePatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern(ThreadPatternConverter.class[ThreadPatternConverter" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enum"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enum(ValuedEnum.class[ValuedEnum" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enum(EnumUtils.class[EnumUtils" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enum(Enum.class[Enum" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jdbc"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions"/>
+        <type handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions{MediaDeployerClose.java[MediaDeployerClose" modificationStamp="73" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions{MediaDeployerStart.java[MediaDeployerStart" modificationStamp="279" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.net"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.net(TelnetAppender.class[TelnetAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.time"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.time(DateFormatUtils.class[DateFormatUtils" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.time(FastDateFormat.class[FastDateFormat" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.builder"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.builder(ToStringBuilder.class[ToStringBuilder" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.builder(StandardToStringStyle.class[StandardToStringStyle" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.builder(ToStringStyle.class[ToStringStyle" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.builder(ReflectionToStringBuilder.class[ReflectionToStringBuilder" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.xml"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jmx"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jmx(LayoutDynamicMBean.class[LayoutDynamicMBean" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jmx(AbstractDynamicMBean.class[AbstractDynamicMBean" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jmx(AppenderDynamicMBean.class[AppenderDynamicMBean" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jmx(HierarchyDynamicMBean.class[HierarchyDynamicMBean" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jmx(LoggerDynamicMBean.class[LoggerDynamicMBean" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(PointerByReference.class[PointerByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(ByteByReference.class[ByteByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(DoubleByReference.class[DoubleByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(ShortByReference.class[ShortByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(ByReference.class[ByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(FloatByReference.class[FloatByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(IntByReference.class[IntByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(LongByReference.class[LongByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr(NativeLongByReference.class[NativeLongByReference" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or(RendererMap.class[RendererMap" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or(ThreadGroupRenderer.class[ThreadGroupRenderer" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or(ObjectRenderer.class[ObjectRenderer" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.util"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.util(Resource.class[Resource" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.util(ResourceUtils.class[ResourceUtils" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.chainsaw"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.nt"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(FilteredLogTableModel.class[FilteredLogTableModel" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(LogFactor5Dialog.class[LogFactor5Dialog" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(LogBrokerMonitor.class[LogBrokerMonitor" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(LogTable.class[LogTable" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(LogFactor5InputDialog.class[LogFactor5InputDialog" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(LogFactor5ErrorDialog.class[LogFactor5ErrorDialog" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(LogFactor5LoadingDialog.class[LogFactor5LoadingDialog" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer(LogTableColumn.class[LogTableColumn" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.varia"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enums"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enums(EnumUtils.class[EnumUtils" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enums(Enum.class[Enum" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enums(ValuedEnum.class[ValuedEnum" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.text"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.text(StrBuilder.class[StrBuilder" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.text(StrMatcher.class[StrMatcher" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.text(StrTokenizer.class[StrTokenizer" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.text(StrLookup.class[StrLookup" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.text(StrSubstitutor.class[StrSubstitutor" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or.jms"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.rewrite"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.rewrite(RewriteAppender.class[RewriteAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.rewrite(RewritePolicy.class[RewritePolicy" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.rewrite(MapRewritePolicy.class[MapRewritePolicy" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.rewrite(PropertyRewritePolicy.class[PropertyRewritePolicy" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.rewrite(ReflectionRewritePolicy.class[ReflectionRewritePolicy" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(LogMF.class[LogMF" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(EnhancedPatternLayout.class[EnhancedPatternLayout" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(SimpleLayout.class[SimpleLayout" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(BasicConfigurator.class[BasicConfigurator" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(AppenderSkeleton.class[AppenderSkeleton" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(Hierarchy.class[Hierarchy" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(DailyRollingFileAppender.class[DailyRollingFileAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(Logger.class[Logger" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(Appender.class[Appender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(Priority.class[Priority" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(ConsoleAppender.class[ConsoleAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(Level.class[Level" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(FileAppender.class[FileAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(LogXF.class[LogXF" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(WriterAppender.class[WriterAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(PatternLayout.class[PatternLayout" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(RollingFileAppender.class[RollingFileAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(Layout.class[Layout" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(HTMLLayout.class[HTMLLayout" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(LogManager.class[LogManager" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(AsyncAppender.class[AsyncAppender" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(LogSF.class[LogSF" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j(Category.class[Category" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(DefaultRepositorySelector.class[DefaultRepositorySelector" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(OptionHandler.class[OptionHandler" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(HierarchyEventListener.class[HierarchyEventListener" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(ErrorHandler.class[ErrorHandler" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(LoggingEvent.class[LoggingEvent" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(ThrowableRendererSupport.class[ThrowableRendererSupport" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(RepositorySelector.class[RepositorySelector" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(NOPLoggerRepository.class[NOPLoggerRepository" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(Filter.class[Filter" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(ThrowableRenderer.class[ThrowableRenderer" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(ThrowableInformation.class[ThrowableInformation" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(NOPLogger.class[NOPLogger" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(LoggerFactory.class[LoggerFactory" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(Configurator.class[Configurator" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(TriggeringEventEvaluator.class[TriggeringEventEvaluator" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(LoggerRepository.class[LoggerRepository" modificationStamp="-1" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi(LocationInfo.class[LocationInfo" modificationStamp="-1" restrictions="0" visibility="0"/>
+    </package>
+</component>

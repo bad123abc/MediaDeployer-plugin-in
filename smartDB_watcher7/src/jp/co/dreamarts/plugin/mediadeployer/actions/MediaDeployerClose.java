@@ -16,7 +16,8 @@ import java.util.Date;
 import jp.co.dreamarts.plugin.mediadeployer.util.ConsolePanel;
 
 public class MediaDeployerClose implements IWorkbenchWindowActionDelegate {
-SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     @Override
     public void run(IAction arg0) {
         shutdownListener();
@@ -30,17 +31,17 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 if (com.sun.jna.Platform.isWindows()) {
                     Runtime.getRuntime().exec("cmd /c " + "taskkill /T /F /PID " + processPid + "\n");
                     MediaDeployerStart.setStartProcess(null);
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been closed");
+                    ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer has been closed");
                 } else if (com.sun.jna.Platform.isMac()) {
                     Runtime.getRuntime().exec("kill " + processPid + "\n");
                     MediaDeployerStart.setStartProcess(null);
-                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been closed");
+                    ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer has been closed");
                 }
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ e.getMessage());
             }
         } else {
-            ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer is not running");
+            ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer is not running");
         }
     }
 
@@ -60,7 +61,8 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 }
 
 class ProcessUtil {
-    static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     static interface Kernel32 extends Library {
         public static Kernel32 INSTANCE = (Kernel32) Native.loadLibrary("kernel32", Kernel32.class);
 
@@ -76,7 +78,7 @@ class ProcessUtil {
                 int pid = Kernel32.INSTANCE.GetProcessId((Long) filed.get(process));
                 return pid;
             } catch (Exception e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ e.getMessage());
             }
         } else if (com.sun.jna.Platform.isMac()) {
             try {
@@ -85,7 +87,7 @@ class ProcessUtil {
                 int pid = (Integer) filed.get(process);
                 return pid;
             } catch (Exception e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ e.getMessage());
             }
         }
         return 0;
