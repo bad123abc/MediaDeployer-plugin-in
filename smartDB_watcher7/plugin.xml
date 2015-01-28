@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Media Deployer"
+            visible="true"
+            id="smartdb_watcher.actionset">
+         <menu
+               label="Media Deployer"
+               id="org.eclipse.ui.articles.action.contribution.navigator.subMenu">
+            <separator
+                  name="Media_Deployer_Group">
+            </separator>
+         </menu>
+         <action
+               label="Close"
+               class="jp.co.dreamarts.plugin.mediadeployer.actions.ServiceCloser"
+               menubarPath="org.eclipse.ui.articles.action.contribution.navigator.subMenu/group1" 
+               id="org.eclipse.ui.articles.action.contribution.navigator.close">
+         </action>
+         <action
+               label="Start"
+               class="jp.co.dreamarts.plugin.mediadeployer.actions.MediaDeployer"
+               menubarPath="org.eclipse.ui.articles.action.contribution.navigator.subMenu/group1"
+               id="org.eclipse.ui.articles.action.contribution.navigator.start">
+         </action>
+         
+      </actionSet>
+   </extension>
+</plugin>

@@ -2,14 +2,16 @@ package jp.co.dreamarts.plugin.mediadeployer.actions;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.ui.IObjectActionDelegate;
-import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.IWorkbenchWindowActionDelegate;
+
 import com.sun.jna.Library;
 import com.sun.jna.Native;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
 
-public class ServiceCloser implements IObjectActionDelegate {
+public class ServiceCloser implements IWorkbenchWindowActionDelegate {
 
     @Override
     public void run(IAction arg0) {
@@ -21,7 +23,7 @@ public class ServiceCloser implements IObjectActionDelegate {
                     Runtime.getRuntime().exec("cmd /c " + "taskkill /T /F /PID " + processPid + "\n");
                     MediaDeployer.getConsole("SmartDB Hot Deployer has been closed");
                 } else if (com.sun.jna.Platform.isMac()) {
-                    Runtime.getRuntime().exec("taskkill /T /F /PID " + processPid + "\n");
+                    Runtime.getRuntime().exec("kill " + processPid + "\n");
                     MediaDeployer.getConsole("SmartDB Hot Deployer has been closed");
                 }
             } catch (IOException e) {
@@ -35,9 +37,16 @@ public class ServiceCloser implements IObjectActionDelegate {
     @Override
     public void selectionChanged(IAction arg0, ISelection arg1) {
     }
+    @Override
+    public void dispose() {
+        // TODO Auto-generated method stub
+        
+    }
 
     @Override
-    public void setActivePart(IAction arg0, IWorkbenchPart arg1) {
+    public void init(IWorkbenchWindow arg0) {
+        // TODO Auto-generated method stub
+        
     }
 }
 

@@ -9,19 +9,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.util.concurrent.ThreadPoolExecutor;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.ui.IObjectActionDelegate;
-import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.console.ConsolePlugin;
 import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 
-public class MediaDeployer implements IObjectActionDelegate {
+public class MediaDeployer implements IWorkbenchWindowActionDelegate {
     // in Mac os ,start grunt
     class MacRunTime extends Thread {
         String filePath;
@@ -44,10 +43,10 @@ public class MediaDeployer implements IObjectActionDelegate {
                         continue;
                     }
                     if (logFlag) {
-                        if(log.indexOf("[39m")!=-1){
-                        log=log.substring(log.indexOf("[39m")+"[39m".length(), log.length());
-                        getConsole(log);
-                        }else{
+                        if (log.indexOf("[39m") != -1) {
+                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                            getConsole(log);
+                        } else {
                             getConsole(log);
                         }
                     }
@@ -84,10 +83,10 @@ public class MediaDeployer implements IObjectActionDelegate {
                         continue;
                     }
                     if (logFlag) {
-                        if(log.indexOf("[39m")!=-1){
-                        log=log.substring(log.indexOf("[39m")+"[39m".length(), log.length());
-                        getConsole(log);
-                        }else{
+                        if (log.indexOf("[39m") != -1) {
+                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                            getConsole(log);
+                        } else {
                             getConsole(log);
                         }
                     }
@@ -121,10 +120,10 @@ public class MediaDeployer implements IObjectActionDelegate {
                         continue;
                     }
                     if (logFlag) {
-                        if(log.indexOf("[39m")!=-1){
-                        log=log.substring(log.indexOf("[39m")+"[39m".length(), log.length());
-                        getConsole(log);
-                        }else{
+                        if (log.indexOf("[39m") != -1) {
+                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                            getConsole(log);
+                        } else {
                             getConsole(log);
                         }
                     }
@@ -160,10 +159,10 @@ public class MediaDeployer implements IObjectActionDelegate {
                         continue;
                     }
                     if (logFlag) {
-                        if(log.indexOf("[39m")!=-1){
-                        log=log.substring(log.indexOf("[39m")+"[39m".length(), log.length());
-                        getConsole(log);
-                        }else{
+                        if (log.indexOf("[39m") != -1) {
+                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                            getConsole(log);
+                        } else {
                             getConsole(log);
                         }
                     }
@@ -456,14 +455,6 @@ public class MediaDeployer implements IObjectActionDelegate {
         }
     }
 
-    @Override
-    public void selectionChanged(IAction arg0, ISelection arg1) {
-    }
-
-    @Override
-    public void setActivePart(IAction arg0, IWorkbenchPart arg1) {
-    }
-
     private void winInstall(String filePath, String oldPath, String newPath) {
         // for windows operating system
         String location = filePath.substring(0, filePath.indexOf(":") + 1);
@@ -485,5 +476,23 @@ public class MediaDeployer implements IObjectActionDelegate {
         } catch (IOException | InterruptedException e) {
             MediaDeployer.getConsole(e.getMessage());
         }
+    }
+
+    @Override
+    public void dispose() {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void init(IWorkbenchWindow arg0) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void selectionChanged(IAction arg0, ISelection arg1) {
+        // TODO Auto-generated method stub
+
     }
 }
