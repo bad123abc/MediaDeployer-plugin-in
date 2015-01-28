@@ -16,13 +16,13 @@
          </menu>
          <action
                label="Close"
-               class="jp.co.dreamarts.plugin.mediadeployer.actions.ServiceCloser"
+               class="jp.co.dreamarts.plugin.mediadeployer.actions.MediaDeployerClose"
                menubarPath="org.eclipse.ui.articles.action.contribution.navigator.subMenu/group1" 
                id="org.eclipse.ui.articles.action.contribution.navigator.close">
          </action>
          <action
                label="Start"
-               class="jp.co.dreamarts.plugin.mediadeployer.actions.MediaDeployer"
+               class="jp.co.dreamarts.plugin.mediadeployer.actions.MediaDeployerStart"
                menubarPath="org.eclipse.ui.articles.action.contribution.navigator.subMenu/group1"
                id="org.eclipse.ui.articles.action.contribution.navigator.start">
          </action>

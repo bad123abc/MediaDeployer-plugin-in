@@ -9,18 +9,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import jp.co.dreamarts.plugin.mediadeployer.util.ConsolePanel;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-import org.eclipse.ui.console.ConsolePlugin;
-import org.eclipse.ui.console.IConsole;
-import org.eclipse.ui.console.MessageConsole;
-import org.eclipse.ui.console.MessageConsoleStream;
 
-public class MediaDeployer implements IWorkbenchWindowActionDelegate {
+public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
+   SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     // in Mac os ,start grunt
     class MacRunTime extends Thread {
         String filePath;
@@ -32,27 +33,35 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
         @Override
         public void run() {
             try {
-                startProcess = Runtime.getRuntime().exec(File.separator.toString() + filePath + "start.sh");
-                getConsole("SmartDB Hot Deployer has been launched");
-                BufferedReader in = new BufferedReader(new InputStreamReader(startProcess.getInputStream()));
-                String log = "";
-                boolean logFlag = false;
-                while ((log = in.readLine()) != null) {
-                    if (log.indexOf("Waiting") != -1) {
-                        logFlag = true;
-                        continue;
-                    }
-                    if (logFlag) {
-                        if (log.indexOf("[39m") != -1) {
-                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                            getConsole(log);
-                        } else {
-                            getConsole(log);
+                if (startProcess == null) {
+                    startProcess = Runtime.getRuntime().exec(
+                            File.separator.toString() + filePath + "start.sh");
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configure has been completed");
+                    ConsolePanel.getConsole(sdf.format(new Date())+sdf.format(new Date())+"Media Deployer directly start...");
+                    BufferedReader in = new BufferedReader(new InputStreamReader(
+                            startProcess.getInputStream()));
+                    String log = "";
+                    boolean logFlag = false;
+                    while ((log = in.readLine()) != null) {
+                        if (log.indexOf("Waiting") != -1) {
+                            logFlag = true;
+                            continue;
+                        }
+                        if (logFlag) {
+                            if (log.indexOf("[39m") != -1) {
+                                log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            } else {
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            }
                         }
                     }
                 }
+                if (startProcess != null) {
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                }
             } catch (IOException e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
         }
     }
@@ -72,27 +81,35 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
             macInstall(filePath, oldPath, newPath);
 
             try {
-                startProcess = Runtime.getRuntime().exec(File.separator.toString() + filePath + "start.sh");
-                getConsole("SmartDB Hot Deployer has been launched");
-                BufferedReader in = new BufferedReader(new InputStreamReader(startProcess.getInputStream()));
-                String log = "";
-                boolean logFlag = false;
-                while ((log = in.readLine()) != null) {
-                    if (log.indexOf("Waiting") != -1) {
-                        logFlag = true;
-                        continue;
-                    }
-                    if (logFlag) {
-                        if (log.indexOf("[39m") != -1) {
-                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                            getConsole(log);
-                        } else {
-                            getConsole(log);
+                if (startProcess == null) {
+                    startProcess = Runtime.getRuntime().exec(
+                            File.separator.toString() + filePath + "start.sh");
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configuration is complete");
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer start...");
+                    BufferedReader in = new BufferedReader(new InputStreamReader(
+                            startProcess.getInputStream()));
+                    String log = "";
+                    boolean logFlag = false;
+                    while ((log = in.readLine()) != null) {
+                        if (log.indexOf("Waiting") != -1) {
+                            logFlag = true;
+                            continue;
+                        }
+                        if (logFlag) {
+                            if (log.indexOf("[39m") != -1) {
+                                log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            } else {
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            }
                         }
                     }
                 }
+                if (startProcess != null) {
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                }
             } catch (IOException e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
 
         }
@@ -106,30 +123,50 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
             this.filePath = filePath;
         }
 
+        
         @Override
         public void run() {
             try {
-                startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                getConsole("SmartDB Hot Deployer has been launched");
-                BufferedReader in = new BufferedReader(new InputStreamReader(startProcess.getInputStream()));
-                String log = "";
-                boolean logFlag = false;
-                while ((log = in.readLine()) != null) {
-                    if (log.indexOf("Waiting") != -1) {
-                        logFlag = true;
-                        continue;
-                    }
-                    if (logFlag) {
-                        if (log.indexOf("[39m") != -1) {
-                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                            getConsole(log);
-                        } else {
-                            getConsole(log);
+                if (startProcess == null) {
+                    startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
+                    Runtime.getRuntime().addShutdownHook( 
+                            new Thread(
+                                new Runnable() {
+                                    public void run() {
+                                        System.out.println("close");
+                                        MediaDeployerClose closer = new MediaDeployerClose();
+                                        closer.shutdownListener();
+                                    }   
+                                }
+                            )
+                        );
+
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configure has been completed");
+                    ConsolePanel.getConsole(sdf.format(new Date())+sdf.format(new Date())+"Media Deployer directly start...");
+                    BufferedReader in = new BufferedReader(new InputStreamReader(
+                            startProcess.getInputStream()));
+                    String log = "";
+                    boolean logFlag = false;
+                    while ((log = in.readLine()) != null) {
+                        if (log.indexOf("Waiting") != -1) {
+                            logFlag = true;
+                            continue;
+                        }
+                        if (logFlag) {
+                            if (log.indexOf("[39m") != -1) {
+                                log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            } else {
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            }
                         }
                     }
                 }
+                if (startProcess != null) {
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                }
             } catch (IOException e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
         }
     }
@@ -148,35 +185,45 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
         public void run() {
             winInstall(filePath, oldPath, newPath);
             try {
-                startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                getConsole("SmartDB Hot Deployer has been launched");
-                BufferedReader in = new BufferedReader(new InputStreamReader(startProcess.getInputStream()));
-                String log = "";
-                boolean logFlag = false;
-                while ((log = in.readLine()) != null) {
-                    if (log.indexOf("Waiting") != -1) {
-                        logFlag = true;
-                        continue;
-                    }
-                    if (logFlag) {
-                        if (log.indexOf("[39m") != -1) {
-                            log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                            getConsole(log);
-                        } else {
-                            getConsole(log);
+                if (startProcess == null) {
+                    startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer configuration is complete");
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer start...");
+                    BufferedReader in = new BufferedReader(new InputStreamReader(
+                            startProcess.getInputStream()));
+                    String log = "";
+                    boolean logFlag = false;
+                    while ((log = in.readLine()) != null) {
+                        if (log.indexOf("Waiting") != -1) {
+                            logFlag = true;
+                            continue;
+                        }
+                        if (logFlag) {
+                            if (log.indexOf("[39m") != -1) {
+                                log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            } else {
+                                ConsolePanel.getConsole(sdf.format(new Date())+log);
+                            }
                         }
                     }
                 }
+                if (startProcess != null) {
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been started");
+                }
+
             } catch (IOException e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
 
         }
     }
 
-    static Process startProcess;
+    static Process startProcess = null;
 
-    static MessageConsole console = new MessageConsole("SmartDB Hot Deployer", null);
+    public static void setStartProcess(Process startProcess) {
+        MediaDeployerStart.startProcess = startProcess;
+    }
 
     public static Process getStartProcess() {
         if (startProcess == null) {
@@ -209,8 +256,8 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
                 fos.close();
             }
         } catch (Exception e) {
-            getConsole("Copy single file operation error");
-            MediaDeployer.getConsole(e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date())+"Copy single file operation error");
+            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
         }
     }
 
@@ -291,13 +338,6 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
         sb.delete(0, sb.length());
     }
 
-    public static void getConsole(String s) {
-        ConsolePlugin.getDefault().getConsoleManager().addConsoles(new IConsole[] { console });
-        MessageConsoleStream consoleStream = console.newMessageStream();
-        ConsolePlugin.getDefault().getConsoleManager().showConsoleView(console);
-        consoleStream.println(s);
-    }
-
     private void macInstall(String filePath, String oldPath, String newPath) {
         try {
             Process process = Runtime.getRuntime().exec(filePath + "sdbwatcherConfig.sh");
@@ -305,15 +345,15 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
             copyFile(oldPath + "package.json", newPath + "package.json");
             copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
         } catch (IOException | InterruptedException e) {
-            getConsole("geunt-sdbwatcher Installation failed ");
-            MediaDeployer.getConsole(e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date())+"grunt-sdbwatcher Installation failed ");
+            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
         }
         // execute "npm install"in shell
         try {
             Process process = Runtime.getRuntime().exec(filePath + "npminstall.sh");
             process.waitFor();
         } catch (IOException | InterruptedException e) {
-            MediaDeployer.getConsole(e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
         }
     }
 
@@ -363,7 +403,7 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
                     creatJsonBatFile(filePath, workspaceName, file, fileBat);
                 }
             } catch (IOException e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
             /*
              * Detecting grunt-sdbwatcher whether or not installed ,if not
@@ -382,7 +422,7 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
                 new WindowsRunTime(filePath).start();
             } else {
-                getConsole("SmartDB Hot Deployer is configuring,please wait...");
+                ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer is configuring,please wait...");
                 new WinSdbwatcherInstaller(filePath, oldPath, newPath).start();
             }
         }
@@ -429,7 +469,7 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
                     creatJsonShFile(filePath, workspaceName, file, fileSh, sdbwatcherConfig, npminstall);
                 }
             } catch (IOException e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
             /*
              * Detecting grunt-sdbwatcher whether or not installed ,if not
@@ -449,7 +489,7 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
                 new MacRunTime(filePath).start();
             } else {
-                getConsole("SmartDB Hot Deployer is comfiguring ,please wait...");
+                ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer is comfiguring ,please wait...");
                 new MacSdbwatcherInstaller(filePath, oldPath, newPath).start();
             }
         }
@@ -465,8 +505,8 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
             copyFile(oldPath + "package.json", newPath + "package.json");
             copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
         } catch (IOException | InterruptedException e) {
-            getConsole("grunt-sdbwatcher Installation failed");
-            MediaDeployer.getConsole(e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date())+"grunt-sdbwatcher Installation failed");
+            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
         }
         // execute "npm install" in cmd
         try {
@@ -474,7 +514,7 @@ public class MediaDeployer implements IWorkbenchWindowActionDelegate {
             Process process = Runtime.getRuntime().exec(command2);
             process.waitFor();
         } catch (IOException | InterruptedException e) {
-            MediaDeployer.getConsole(e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
         }
     }
 

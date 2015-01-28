@@ -10,48 +10,57 @@ import com.sun.jna.Native;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class ServiceCloser implements IWorkbenchWindowActionDelegate {
+import jp.co.dreamarts.plugin.mediadeployer.util.ConsolePanel;
 
+public class MediaDeployerClose implements IWorkbenchWindowActionDelegate {
+SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     @Override
     public void run(IAction arg0) {
+        shutdownListener();
+    }
+
+    public void shutdownListener() {
         int processPid;
-        if (MediaDeployer.getStartProcess() != null) {
-            processPid = ProcessUtil.getPid((MediaDeployer.getStartProcess()));
+        if (MediaDeployerStart.getStartProcess() != null) {
+            processPid = ProcessUtil.getPid((MediaDeployerStart.getStartProcess()));
             try {
                 if (com.sun.jna.Platform.isWindows()) {
                     Runtime.getRuntime().exec("cmd /c " + "taskkill /T /F /PID " + processPid + "\n");
-                    MediaDeployer.getConsole("SmartDB Hot Deployer has been closed");
+                    MediaDeployerStart.setStartProcess(null);
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been closed");
                 } else if (com.sun.jna.Platform.isMac()) {
                     Runtime.getRuntime().exec("kill " + processPid + "\n");
-                    MediaDeployer.getConsole("SmartDB Hot Deployer has been closed");
+                    MediaDeployerStart.setStartProcess(null);
+                    ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer has been closed");
                 }
             } catch (IOException e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
         } else {
-            MediaDeployer.getConsole("SmartDB Hot Deployer is not running");
+            ConsolePanel.getConsole(sdf.format(new Date())+"Media Deployer is not running");
         }
     }
 
     @Override
     public void selectionChanged(IAction arg0, ISelection arg1) {
     }
+
     @Override
     public void dispose() {
-        // TODO Auto-generated method stub
-        
+
     }
 
     @Override
     public void init(IWorkbenchWindow arg0) {
-        // TODO Auto-generated method stub
-        
+
     }
 }
 
 class ProcessUtil {
-
+    static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     static interface Kernel32 extends Library {
         public static Kernel32 INSTANCE = (Kernel32) Native.loadLibrary("kernel32", Kernel32.class);
 
@@ -67,7 +76,7 @@ class ProcessUtil {
                 int pid = Kernel32.INSTANCE.GetProcessId((Long) filed.get(process));
                 return pid;
             } catch (Exception e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
         } else if (com.sun.jna.Platform.isMac()) {
             try {
@@ -76,7 +85,7 @@ class ProcessUtil {
                 int pid = (Integer) filed.get(process);
                 return pid;
             } catch (Exception e) {
-                MediaDeployer.getConsole(e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date())+e.getMessage());
             }
         }
         return 0;
