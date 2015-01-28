@@ -164,7 +164,7 @@
     </package>
     <package visibility="1">
         <fragment handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions"/>
-        <type handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions{MediaDeployerClose.java[MediaDeployerClose" modificationStamp="73" restrictions="0" visibility="0"/>
+        <type handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions{MediaDeployerClose.java[MediaDeployerClose" modificationStamp="77" restrictions="0" visibility="0"/>
         <type handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions{MediaDeployerStart.java[MediaDeployerStart" modificationStamp="279" restrictions="0" visibility="0"/>
     </package>
     <package visibility="1">

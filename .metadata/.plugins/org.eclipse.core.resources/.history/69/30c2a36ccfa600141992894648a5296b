@@ -60,3 +60,36 @@ public class MediaDeployerClose implements IWorkbenchWindowActionDelegate {
     }
 }
 
+class ProcessUtil {
+    static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    static interface Kernel32 extends Library {
+        public static Kernel32 INSTANCE = (Kernel32) Native.loadLibrary("kernel32", Kernel32.class);
+
+        public int GetProcessId(Long hProcess);
+    }
+
+    public static int getPid(Process process) {
+        Field filed;
+        if (com.sun.jna.Platform.isWindows()) {
+            try {
+                filed = process.getClass().getDeclaredField("handle");
+                filed.setAccessible(true);
+                int pid = Kernel32.INSTANCE.GetProcessId((Long) filed.get(process));
+                return pid;
+            } catch (Exception e) {
+                ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ e.getMessage());
+            }
+        } else if (com.sun.jna.Platform.isMac()) {
+            try {
+                filed = process.getClass().getDeclaredField("pid");
+                filed.setAccessible(true);
+                int pid = (Integer) filed.get(process);
+                return pid;
+            } catch (Exception e) {
+                ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ e.getMessage());
+            }
+        }
+        return 0;
+    }
+}

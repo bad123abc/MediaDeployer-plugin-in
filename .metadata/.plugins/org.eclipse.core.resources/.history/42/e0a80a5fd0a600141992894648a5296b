@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -21,21 +20,9 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import com.sun.jna.Library;
-import com.sun.jna.Native;
-
-
 public class MediaDeployerStart implements IWorkbenchWindowActionDelegate {
-   public static int getPid() {
-        return Pid;
-    }
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public static void setPid(int pid) {
-        Pid = pid;
-    }
-
-SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-   public static int Pid;
     // in Mac os ,start grunt
     class MacRunTime extends Thread {
         String filePath;
@@ -50,22 +37,10 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(
                             File.separator.toString() + filePath + "start.sh");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
-                    Runtime.getRuntime().addShutdownHook(
-                            new Thread(
-                                new Runnable() {
-                                    public void run() {
-                                        try {
-                                            Runtime.getRuntime().exec("kill " + Pid + "\n");
-                                        } catch (IOException e) {
-                                            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());;
-                                        }
-                                    }   
-                                }
-                            )
-                        );
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer configure has been completed");
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+sdf.format(new Date())+"Media Deployer directly start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configure has been completed");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" 
+                            + "Media Deployer directly start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -78,18 +53,19 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
             } catch (IOException e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
         }
     }
@@ -112,22 +88,9 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(
                             File.separator.toString() + filePath + "start.sh");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
-                    Runtime.getRuntime().addShutdownHook(
-                            new Thread(
-                                new Runnable() {
-                                    public void run() {
-                                        try {
-                                            Runtime.getRuntime().exec("kill " + Pid + "\n");
-                                        } catch (IOException e) {
-                                            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());;
-                                        }
-                                    }   
-                                }
-                            )
-                        );
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer configuration is complete");
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configuration is complete");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + "Media Deployer start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -140,18 +103,19 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
             } catch (IOException e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
 
         }
@@ -165,29 +129,23 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             this.filePath = filePath;
         }
 
-        
         @Override
         public void run() {
             try {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
-                    Runtime.getRuntime().addShutdownHook(
-                            new Thread(
-                                new Runnable() {
-                                    public void run() {
-                                        try {
-                                            Runtime.getRuntime().exec("cmd /c " + "taskkill /T /F /PID " + Pid + "\n");
-                                        } catch (IOException e) {
-                                            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());;
-                                        }
-                                    }   
-                                }
-                            )
-                        );
+                    Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                        public void run() {
+                            System.out.println("close");
+                            MediaDeployerClose closer = new MediaDeployerClose();
+                            closer.shutdownListener();
+                        }
+                    }));
 
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer configure has been completed");
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+sdf.format(new Date())+"Media Deployer directly start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configure has been completed");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" 
+                            + "Media Deployer directly start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -200,18 +158,19 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
             } catch (IOException e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
         }
     }
@@ -232,22 +191,9 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             try {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
-                    Runtime.getRuntime().addShutdownHook(
-                            new Thread(
-                                new Runnable() {
-                                    public void run() {
-                                        try {
-                                            Runtime.getRuntime().exec("cmd /c " + "taskkill /T /F /PID " + Pid + "\n");
-                                        } catch (IOException e) {
-                                            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());;
-                                        }
-                                    }   
-                                }
-                            )
-                        );
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer configuration is complete");
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer start...");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer configuration is complete");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + "Media Deployer start...");
                     BufferedReader in = new BufferedReader(new InputStreamReader(
                             startProcess.getInputStream()));
                     String log = "";
@@ -260,19 +206,20 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         if (logFlag) {
                             if (log.indexOf("[39m") != -1) {
                                 log = log.substring(log.indexOf("[39m") + "[39m".length(), log.length());
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             } else {
-                               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+log);
+                                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + log);
                             }
                         }
                     }
                 }
                 if (startProcess != null) {
-                   ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer has been started");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                            + "Media Deployer has been started");
                 }
 
             } catch (IOException e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
 
         }
@@ -315,8 +262,8 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 fos.close();
             }
         } catch (Exception e) {
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Copy single file operation error");
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + "Copy single file operation error");
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
     }
 
@@ -404,15 +351,16 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             copyFile(oldPath + "package.json", newPath + "package.json");
             copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
         } catch (IOException | InterruptedException e) {
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"grunt-sdbwatcher Installation failed ");
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                    + "grunt-sdbwatcher Installation failed ");
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
         // execute "npm install"in shell
         try {
             Process process = Runtime.getRuntime().exec(filePath + "npminstall.sh");
             process.waitFor();
         } catch (IOException | InterruptedException e) {
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
     }
 
@@ -462,7 +410,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     creatJsonBatFile(filePath, workspaceName, file, fileBat);
                 }
             } catch (IOException e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
             /*
              * Detecting grunt-sdbwatcher whether or not installed ,if not
@@ -481,7 +429,8 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
                 new WindowsRunTime(filePath).start();
             } else {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer is configuring,please wait...");
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                        + "Media Deployer is configuring,please wait...");
                 new WinSdbwatcherInstaller(filePath, oldPath, newPath).start();
             }
         }
@@ -528,7 +477,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     creatJsonShFile(filePath, workspaceName, file, fileSh, sdbwatcherConfig, npminstall);
                 }
             } catch (IOException e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
             }
             /*
              * Detecting grunt-sdbwatcher whether or not installed ,if not
@@ -548,7 +497,8 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
                 new MacRunTime(filePath).start();
             } else {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"Media Deployer is comfiguring ,please wait...");
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                        + "Media Deployer is comfiguring ,please wait...");
                 new MacSdbwatcherInstaller(filePath, oldPath, newPath).start();
             }
         }
@@ -564,8 +514,9 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             copyFile(oldPath + "package.json", newPath + "package.json");
             copyFile(oldPath + "Gruntfile.js", newPath + "Gruntfile.js");
         } catch (IOException | InterruptedException e) {
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+"grunt-sdbwatcher Installation failed");
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"
+                    + "grunt-sdbwatcher Installation failed");
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
         // execute "npm install" in cmd
         try {
@@ -573,59 +524,22 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Process process = Runtime.getRuntime().exec(command2);
             process.waitFor();
         } catch (IOException | InterruptedException e) {
-           ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]" + e.getMessage());
         }
     }
 
     @Override
     public void dispose() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void init(IWorkbenchWindow arg0) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void selectionChanged(IAction arg0, ISelection arg1) {
-        // TODO Auto-generated method stub
 
-    }
-}
-class ProcessUtil {
-    static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    static interface Kernel32 extends Library {
-        public static Kernel32 INSTANCE = (Kernel32) Native.loadLibrary("kernel32", Kernel32.class);
-
-        public int GetProcessId(Long hProcess);
-    }
-
-    public static int getPid(Process process) {
-        Field filed;
-        if (com.sun.jna.Platform.isWindows()) {
-            try {
-                filed = process.getClass().getDeclaredField("handle");
-                filed.setAccessible(true);
-                int pid = Kernel32.INSTANCE.GetProcessId((Long) filed.get(process));
-                MediaDeployerStart.setPid(pid);
-                return pid;
-            } catch (Exception e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
-            }
-        } else if (com.sun.jna.Platform.isMac()) {
-            try {
-                filed = process.getClass().getDeclaredField("pid");
-                filed.setAccessible(true);
-                int pid = (Integer) filed.get(process);
-                MediaDeployerStart.setPid(pid);
-                return pid;
-            } catch (Exception e) {
-               ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
-            }
-        }
-        return 0;
     }
 }
