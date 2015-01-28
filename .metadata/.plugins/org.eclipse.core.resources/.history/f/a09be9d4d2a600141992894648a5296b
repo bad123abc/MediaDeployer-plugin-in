@@ -10,13 +10,10 @@ public class ConsolePanel {
 
 
     public static void getConsole(String s) {
-        if (ConsolePlugin.getDefault().getConsoleManager() != null){
         ConsolePlugin.getDefault().getConsoleManager().addConsoles(new IConsole[] { console });
         ConsolePlugin.getDefault().getConsoleManager().showConsoleView(console);
         MessageConsoleStream consoleStream = console.newMessageStream();
         consoleStream.println(s);
-        }
-        else return;
     }
 
 }

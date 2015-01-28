@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="smartDB_watcher7" modificationStamp="17" version="1.2">
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.categoryexplorer"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.reflect"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.math"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.win32"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or.sax"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.mutable"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.config"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.helpers"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer.configure"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.exception"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.pattern"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enum"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jdbc"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions"/>
+        <type handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer.actions{MediaDeployerStart.java[MediaDeployerStart" modificationStamp="284" restrictions="0" visibility="0"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.net"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.time"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.builder"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.xml"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/src&lt;jp.co.dreamarts.plugin.mediadeployer"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.jmx"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/jna-3.0.9.jar&lt;com.sun.jna.ptr"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.util"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.chainsaw"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.nt"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.lf5.viewer"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.varia"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.enums"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/apache-commons-lang.jar&lt;org.apache.commons.lang.text"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.or.jms"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.rewrite"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=smartDB_watcher7/lib\/log4j-1.2.17.jar&lt;org.apache.log4j.spi"/>
+    </package>
+</component>
