@@ -31,18 +31,20 @@ public class MediaDeployerClose implements IWorkbenchWindowActionDelegate {
                 if (com.sun.jna.Platform.isWindows()) {
                     Runtime.getRuntime().exec("cmd /c " + "taskkill /T /F /PID " + processPid + "\n");
                     MediaDeployerStart.setStartProcess(null);
-                    ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer has been closed");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO] "
+                            + "Media Deployer has been closed");
                 } else if (com.sun.jna.Platform.isMac()) {
                     processPid += 1;
                     Runtime.getRuntime().exec("kill " + processPid + "\n");
                     MediaDeployerStart.setStartProcess(null);
-                    ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer has been closed");
+                    ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO] "
+                            + "Media Deployer has been closed");
                 }
             } catch (IOException e) {
-                ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ e.getMessage());
+                ConsolePanel.getConsole(sdf.format(new Date()) + "[ERROR] " + e.getMessage());
             }
         } else {
-            ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer is not running");
+            ConsolePanel.getConsole(sdf.format(new Date()) + "[WARN] " + "Media Deployer is not running");
         }
     }
 
@@ -60,4 +62,3 @@ public class MediaDeployerClose implements IWorkbenchWindowActionDelegate {
 
     }
 }
-
