@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: MediaDeployer Plugin-in
-Bundle-SymbolicName: MediaDeployerPlugin-in;singleton:=true
+Bundle-Name: jp.co.dreamarts.mediaDeloyerPlugin-in
+Bundle-SymbolicName: jp.co.dreamarts.mediaDeloyerPlugin-in;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: jp.co.dreamarts.plugin.mediadeployer.Activator
 Require-Bundle: org.eclipse.ui,

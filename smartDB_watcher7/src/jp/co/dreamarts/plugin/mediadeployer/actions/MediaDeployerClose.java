@@ -33,6 +33,7 @@ public class MediaDeployerClose implements IWorkbenchWindowActionDelegate {
                     MediaDeployerStart.setStartProcess(null);
                     ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer has been closed");
                 } else if (com.sun.jna.Platform.isMac()) {
+                    processPid += 1;
                     Runtime.getRuntime().exec("kill " + processPid + "\n");
                     MediaDeployerStart.setStartProcess(null);
                     ConsolePanel.getConsole(sdf.format(new Date())+"[INFO]"+ "Media Deployer has been closed");

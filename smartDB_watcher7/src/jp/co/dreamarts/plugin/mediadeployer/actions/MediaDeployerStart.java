@@ -50,7 +50,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(
                             File.separator.toString() + filePath + "start.sh");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
+                    ProcessUtil.getPid((getStartProcess()));
                     Runtime.getRuntime().addShutdownHook(
                             new Thread(
                                 new Runnable() {
@@ -104,7 +104,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             this.newPath = newPath;
         }
 
-        @Override
+        @Override   
         public void run() {
             macInstall(filePath, oldPath, newPath);
 
@@ -112,7 +112,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(
                             File.separator.toString() + filePath + "start.sh");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
+                    ProcessUtil.getPid((getStartProcess()));
                     Runtime.getRuntime().addShutdownHook(
                             new Thread(
                                 new Runnable() {
@@ -620,7 +620,8 @@ class ProcessUtil {
                 filed = process.getClass().getDeclaredField("pid");
                 filed.setAccessible(true);
                 int pid = (Integer) filed.get(process);
-                MediaDeployerStart.setPid(pid);
+                int gruntPid=pid+1;
+                MediaDeployerStart.setPid(gruntPid);
                 return pid;
             } catch (Exception e) {
                ConsolePanel.getConsole(sdf.format(new Date()) + "[INFO]"+e.getMessage());
