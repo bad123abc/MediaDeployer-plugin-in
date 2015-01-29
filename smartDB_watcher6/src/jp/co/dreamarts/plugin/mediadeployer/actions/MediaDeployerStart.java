@@ -171,7 +171,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             try {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
+                    ProcessUtil.getPid((getStartProcess()));
                     Runtime.getRuntime().addShutdownHook(
                             new Thread(
                                 new Runnable() {
@@ -232,7 +232,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             try {
                 if (startProcess == null) {
                     startProcess = Runtime.getRuntime().exec(filePath + "start.bat");
-                    Pid = ProcessUtil.getPid((getStartProcess()));
+                    ProcessUtil.getPid((getStartProcess()));
                     Runtime.getRuntime().addShutdownHook(
                             new Thread(
                                 new Runnable() {

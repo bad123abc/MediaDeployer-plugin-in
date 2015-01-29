@@ -6,21 +6,22 @@ Bundle-Version: 1.0.0
 Bundle-Activator: jp.co.dreamarts.plugin.mediadeployer.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.ui.console;bundle-version="3.5.300"
+ org.eclipse.ui.console;bundle-version="3.5.100"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  lib/apache-commons-lang.jar,
  lib/jna-3.0.9.jar,
- lib/log4j-1.2.17.jar
+ lib/log4j-1.2.17.jar,
+ lib/org.eclipse.ui.console_3.5.100.v20110511.jar
 Export-Package: com.sun.jna,
  com.sun.jna.ptr,
  com.sun.jna.win32,
  jp.co.dreamarts.plugin.mediadeployer,
  jp.co.dreamarts.plugin.mediadeployer.actions,
+ jp.co.dreamarts.plugin.mediadeployer.util,
  org.apache.commons.lang,
  org.apache.commons.lang.builder,
- org.apache.commons.lang.enum,
  org.apache.commons.lang.enums,
  org.apache.commons.lang.exception,
  org.apache.commons.lang.math,
@@ -48,4 +49,7 @@ Export-Package: com.sun.jna,
  org.apache.log4j.rewrite,
  org.apache.log4j.spi,
  org.apache.log4j.varia,
- org.apache.log4j.xml
+ org.apache.log4j.xml,
+ org.eclipse.ui.console,
+ org.eclipse.ui.console.actions,
+ org.eclipse.ui.internal.console
